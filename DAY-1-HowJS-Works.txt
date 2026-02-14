@@ -1,0 +1,126 @@
+# 📘 JavaScript Execution Context — Documentation
+
+## 🔹 What is JavaScript?
+
+JavaScript is a **synchronous** and **single-threaded** programming language.
+This means it executes **one statement at a time**, in a **specific order**, from top to bottom.
+
+Example:
+
+```js
+console.log("Hello JS...");
+```
+
+JavaScript will complete this line first, then move to the next line.
+
+---
+
+## 🔹 What is an Execution Context?
+
+An **Execution Context** is the environment in which JavaScript code is **created and executed**.
+
+You can imagine it as a **big box** that manages:
+
+* Variables
+* Functions
+* The execution of code
+
+Every time JavaScript runs, it creates an execution context.
+
+---
+
+## 🔹 Parts of an Execution Context
+
+An execution context has **two main components**:
+
+### 1️⃣ Variable Environment (Memory Component)
+
+This is where JavaScript stores:
+
+* Variables
+* Functions
+* Function arguments
+
+Before the code starts running, JavaScript allocates memory for all variables and functions here.
+
+Example:
+
+```js
+let a = 10;
+function greet() {
+  console.log("Hi");
+}
+```
+
+In memory:
+
+* `a → undefined`
+* `greet → function()`
+
+---
+
+### 2️⃣ Thread of Execution (Code Component)
+
+This is where the **actual code runs**.
+
+JavaScript:
+
+* Reads the code **line by line**
+* Executes one line at a time
+* Moves to the next line only after finishing the current one
+
+Example:
+
+```js
+let a = 10;
+console.log(a);
+```
+
+Steps:
+
+1. Assigns `10` to `a`
+2. Prints `10`
+
+---
+
+## 🔹 How JavaScript Executes Code
+
+JavaScript follows these steps:
+
+### Step 1: Creation Phase
+
+* Memory is allocated
+* Variables are set to `undefined`
+* Functions are stored fully
+
+### Step 2: Execution Phase
+
+* Code is executed line by line
+* Values are assigned
+* Functions are called
+
+---
+
+## 🔹 Why JavaScript is Single-Threaded
+
+JavaScript can do only **one task at a time** because it has:
+
+* One call stack
+* One main thread of execution
+
+This makes JavaScript:
+
+* Predictable
+* Easier to manage
+
+---
+
+## 🔹 Summary
+
+| Term                 | Meaning                        |
+| -------------------- | ------------------------------ |
+| Execution Context    | Environment where JS runs      |
+| Variable Environment | Stores variables and functions |
+| Thread of Execution  | Runs code line by line         |
+| Single-threaded      | Executes one task at a time    |
+| Synchronous          | Executes in order              |
